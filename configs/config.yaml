@@ -1,0 +1,68 @@
+output_dir: "outputs"
+
+inputs:
+  - scope_id: "example"
+    rtl_dir: ""
+
+llm:
+  provider: "deepseek"
+  model: ""
+
+batch:
+  batch_id: "batch_001"
+  max_concurrent_runs: 1
+
+rtl_structure_graph:
+  graph_id:
+
+permission_chain:
+  target_groups:
+    max_accesses_per_candidate: 24
+    max_source_locs_per_candidate: 32
+    max_equivalence_objects_per_group: 6
+    snippet_context_lines: 1
+    max_source_chars_per_group: 12000
+    max_neighborhood_edges_per_group: 120
+
+  target_screening:
+    temperature: 0.2
+    max_tokens: 8192
+    request_timeout: 600
+    max_groups_per_batch: 6
+    max_input_chars_per_batch: 60000
+    max_source_chars_per_group: 8000
+    max_source_snippets_per_group: 12
+    max_neighborhood_nodes_per_group: 24
+    max_neighborhood_edges_per_group: 24
+    max_accesses_per_member: 8
+    max_evidence_items_per_group: 8
+    max_ids_per_evidence_item: 8
+    max_llm_attempts: 2
+
+  chain_graphs:
+    max_chains_per_repo: 1000
+    max_nodes_per_chain: 80
+    max_edges_per_chain: 120
+    max_depth: 4
+    max_frontier_per_depth: 96
+    include_target_access_nodes: true
+    include_instance_nodes_from_connects: true
+    max_required_nodes_per_chain: 600
+    max_required_edges_per_chain: 1800
+
+vulnerability_analysis:
+  chain_contexts:
+    context_before_lines: 6
+    context_after_lines: 10
+    max_lines_per_snippet: 80
+    max_snippets_per_chain: 120
+
+  analysis:
+    temperature: 0.2
+    max_tokens: 32768
+    request_timeout: 600
+    max_chains:
+    require_violation_evidence: true
+    analysis_mode: "evidence_constrained"
+    max_llm_attempts: 2
+    repetitions: 1
