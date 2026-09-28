@@ -1,0 +1,16 @@
+batch_id: module2_v3_target_screening_deepseek_pilot_v1
+groups_root: runs/ours/module2/target_groups
+output_root: runs/ours/module2/screening
+temperature: 0.2
+max_tokens: 8192
+request_timeout: 600
+max_groups_per_batch: 6
+max_input_chars_per_batch: 60000
+models:
+  - model_id: deepseek_v4_pro
+    provider: deepseek
+    model: deepseek-v4-pro
+scopes:
+  - hackatdac19__h19_access_control_fabric_scope
+  - hackatdac21__h21_fuse_rng_rsa_expansion_scope
+  - hackatdac18__debug_jtag_scope

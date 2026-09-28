@@ -1,0 +1,45 @@
+batch_id: ours_chain_context_deepseek
+method_name: ours_chain_context
+context_root: runs/validation/previous_chain_context_1049/module3/contexts_1049
+output_root: runs/validation/previous_chain_context_1049/findings
+repetitions: 1
+temperature: 0.2
+max_tokens: 32768
+max_chains:
+request_timeout: 600
+require_violation_evidence: true
+models:
+  - model_id: deepseek_v4_pro
+    provider: deepseek
+    model: deepseek-v4-pro
+input_scopes:
+  - scope_id: hackatdac18__debug_jtag_scope
+    path: datasets/agent_inputs/hackatdac18/debug_jtag_scope
+  - scope_id: hackatdac18__fc_core_security_scope
+    path: datasets/agent_inputs/hackatdac18/fc_core_security_scope
+  - scope_id: hackatdac18__gpio_apb_scope
+    path: datasets/agent_inputs/hackatdac18/gpio_apb_scope
+  - scope_id: hackatdac19__h19_access_control_fabric_scope
+    path: datasets/agent_inputs/hackatdac19/h19_access_control_fabric_scope
+  - scope_id: hackatdac19__h19_aes_rom2_security_scope
+    path: datasets/agent_inputs/hackatdac19/h19_aes_rom2_security_scope
+  - scope_id: hackatdac19__h19_csr_privilege_scope
+    path: datasets/agent_inputs/hackatdac19/h19_csr_privilege_scope
+  - scope_id: hackatdac19__h19_debug_jtag_scope
+    path: datasets/agent_inputs/hackatdac19/h19_debug_jtag_scope
+  - scope_id: hackatdac19__h19_jtag_debug_expansion_scope
+    path: datasets/agent_inputs/hackatdac19/h19_jtag_debug_expansion_scope
+  - scope_id: hackatdac21__h21_access_lock_scope
+    path: datasets/agent_inputs/hackatdac21/h21_access_lock_scope
+  - scope_id: hackatdac21__h21_access_reglock_reset_expansion_scope
+    path: datasets/agent_inputs/hackatdac21/h21_access_reglock_reset_expansion_scope
+  - scope_id: hackatdac21__h21_crypto_security_scope
+    path: datasets/agent_inputs/hackatdac21/h21_crypto_security_scope
+  - scope_id: hackatdac21__h21_dma_pkt_scope
+    path: datasets/agent_inputs/hackatdac21/h21_dma_pkt_scope
+  - scope_id: hackatdac21__h21_dma_pmp_expansion_scope
+    path: datasets/agent_inputs/hackatdac21/h21_dma_pmp_expansion_scope
+  - scope_id: hackatdac21__h21_fuse_rng_rsa_expansion_scope
+    path: datasets/agent_inputs/hackatdac21/h21_fuse_rng_rsa_expansion_scope
+  - scope_id: hackatdac21__h21_jtag_auth_expansion_scope
+    path: datasets/agent_inputs/hackatdac21/h21_jtag_auth_expansion_scope
