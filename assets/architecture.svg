@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title description">
+  <title id="title">VeriPVD architecture</title>
+  <desc id="description">A three-row path from RTL source through the RTL structure graph, permission targets and chains, and vulnerability analysis to source-linked findings.</desc>
+  <style>
+    .canvas { fill: #ffffff; }
+    .card rect { stroke-width: 1.6; }
+    .neutral rect { fill: #f8fafc; stroke: #cbd5e1; }
+    .blue rect { fill: #eff6ff; stroke: #93c5fd; }
+    .amber rect { fill: #fffbeb; stroke: #fcd34d; }
+    .green rect { fill: #ecfdf5; stroke: #86efac; }
+    .teal rect { fill: #f0fdfa; stroke: #5eead4; }
+    .eyebrow { font: 700 11px "Segoe UI", Arial, sans-serif; letter-spacing: 1px; }
+    .neutral .eyebrow { fill: #475569; }
+    .blue .eyebrow { fill: #1d4ed8; }
+    .amber .eyebrow { fill: #a16207; }
+    .green .eyebrow { fill: #047857; }
+    .teal .eyebrow { fill: #0f766e; }
+    .name { fill: #0f172a; font: 600 18px "Segoe UI", Arial, sans-serif; }
+    .detail { fill: #475569; font: 13px "Segoe UI", Arial, sans-serif; }
+    .flow { fill: none; stroke: #64748b; stroke-width: 2.5; stroke-linecap: round; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 1 1 L 9 5 L 1 9 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="canvas" width="900" height="520" rx="16"/>
+
+  <g class="card neutral" transform="translate(32 40)">
+    <rect width="252" height="112" rx="14"/>
+    <text class="eyebrow" x="18" y="25">INPUT</text>
+    <text class="name" x="18" y="56">RTL repository</text>
+    <text class="detail" x="18" y="82">.v · .sv · .vh source files</text>
+  </g>
+  <g class="card blue" transform="translate(324 40)">
+    <rect width="252" height="112" rx="14"/>
+    <text class="eyebrow" x="18" y="25">01 · RTL STRUCTURE GRAPH</text>
+    <text class="name" x="18" y="56">RTL graph</text>
+    <text class="detail" x="18" y="81">Modules, signals, statements</text>
+    <text class="detail" x="18" y="100">and connections</text>
+  </g>
+  <g class="card amber" transform="translate(616 40)">
+    <rect width="252" height="112" rx="14"/>
+    <text class="eyebrow" x="18" y="25">02 · PERMISSION CHAIN</text>
+    <text class="name" x="18" y="56">Target groups</text>
+    <text class="detail" x="18" y="82">Permission-related candidates</text>
+  </g>
+
+  <g class="card amber" transform="translate(616 204)">
+    <rect width="252" height="112" rx="14"/>
+    <text class="eyebrow" x="18" y="25">02 · PERMISSION CHAIN</text>
+    <text class="name" x="18" y="56">LLM target screening</text>
+    <text class="detail" x="18" y="82">Retain relevant target groups</text>
+  </g>
+  <g class="card amber" transform="translate(324 204)">
+    <rect width="252" height="112" rx="14"/>
+    <text class="eyebrow" x="18" y="25">02 · PERMISSION CHAIN</text>
+    <text class="name" x="18" y="56">Mechanism focuses</text>
+    <text class="detail" x="18" y="82">Separate related mechanisms</text>
+  </g>
+  <g class="card amber" transform="translate(32 204)">
+    <rect width="252" height="112" rx="14"/>
+    <text class="eyebrow" x="18" y="25">02 · PERMISSION CHAIN</text>
+    <text class="name" x="18" y="56">Permission chain graphs</text>
+    <text class="detail" x="18" y="82">Nodes, edges, source locations</text>
+  </g>
+
+  <g class="card green" transform="translate(32 368)">
+    <rect width="252" height="112" rx="14"/>
+    <text class="eyebrow" x="18" y="25">03 · VULNERABILITY ANALYSIS</text>
+    <text class="name" x="18" y="56">Source contexts</text>
+    <text class="detail" x="18" y="82">Chains with RTL code excerpts</text>
+  </g>
+  <g class="card green" transform="translate(324 368)">
+    <rect width="252" height="112" rx="14"/>
+    <text class="eyebrow" x="18" y="25">03 · VULNERABILITY ANALYSIS</text>
+    <text class="name" x="18" y="56">LLM chain analysis</text>
+    <text class="detail" x="18" y="82">Review source-backed evidence</text>
+  </g>
+  <g class="card teal" transform="translate(616 368)">
+    <rect width="252" height="112" rx="14"/>
+    <text class="eyebrow" x="18" y="25">OUTPUT</text>
+    <text class="name" x="18" y="56">Findings</text>
+    <text class="detail" x="18" y="82">Source-linked evidence</text>
+  </g>
+
+  <path class="flow" d="M 288 96 H 320"/>
+  <path class="flow" d="M 580 96 H 612"/>
+  <path class="flow" d="M 742 156 V 200"/>
+  <path class="flow" d="M 612 260 H 580"/>
+  <path class="flow" d="M 320 260 H 288"/>
+  <path class="flow" d="M 158 320 V 364"/>
+  <path class="flow" d="M 288 424 H 320"/>
+  <path class="flow" d="M 580 424 H 612"/>
+</svg>

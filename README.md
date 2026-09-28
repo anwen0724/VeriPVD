@@ -4,33 +4,7 @@ VeriPVD is an RTL security analysis tool focused on permission-related vulnerabi
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    RTL["RTL repository<br/>.v / .sv / .vh"]
-
-    subgraph M1["1. RTL Structure Graph"]
-        Scan["Scan and extract RTL structures"] --> Graph["RTL graph"]
-    end
-
-    subgraph M2["2. Permission Chain"]
-        Groups["Build target groups"] --> Screen["LLM target screening"]
-        Screen --> Focus["Mechanism focuses"]
-        Focus --> Chains["Permission chain graphs"]
-    end
-
-    subgraph M3["3. Vulnerability Analysis"]
-        Context["Extract source contexts"] --> Analyze["LLM chain analysis"]
-        Analyze --> Findings["Findings and evidence"]
-    end
-
-    RTL --> Scan
-    Graph --> Groups
-    RTL --> Groups
-    Graph --> Focus
-    Graph --> Chains
-    Chains --> Context
-    RTL --> Context
-```
+![VeriPVD architecture](assets/architecture.svg)
 
 ## Structure
 
