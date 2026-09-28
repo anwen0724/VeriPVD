@@ -7,3 +7,6 @@ datasets/
 runs/
 evaluation_results/
 outputs/
+.idea/
+verification_input/
+verification_output/

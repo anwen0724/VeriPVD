@@ -12,9 +12,9 @@ from .env import get_first_env, load_project_env
 class DeepSeekClientConfig:
 
 
-    model: str = "deepseek-v4-pro"
+    model: str = "deepseek-flash"
     temperature: float = 0.2
-    max_tokens: int = 8192
+    max_tokens: int = 32768
     api_key: Optional[str] = None
     base_url: Optional[str] = None
 
